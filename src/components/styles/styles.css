@@ -1,0 +1,3 @@
+html, body { /* this allows the children to inherit this style */
+    font-family: "Karla";
+ }
