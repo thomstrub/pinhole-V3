@@ -8,18 +8,20 @@ const basicBoxStyles = {
     borderRadius: "6px",
     boxSizing: "border-box",
     marginBottom:"32px",
-    // display: "flex",
     paddingLeft:"16px",
-    // display: "block",
-    // margin: "0 auto",
-
     color: "#384656"
 }
 
 const inputsStyles = {
     ...basicBoxStyles,
     height: "60px",
-    width: "200px"    
+    width: "240px",
+}
+
+const mobileInputStyles = {
+    ...basicBoxStyles,
+    height: "60px",
+    width: "58%",
 }
 
 const resultsStyles = {
@@ -38,20 +40,29 @@ const simpleCalculatorStyles = {
     ...basicBoxStyles,
     background: "#EAECEF",
     height: "60px",
-    width: "355px",
+    width: "390px",
     border: "1px solid #DBE1E5",
-    display: "flex", 
-    width:"100%", 
+    display: "block", 
+    margin: "0 auto",
     justifyContent: "center" 
 
+}
+
+const mobileSimpleCalculatorStyles = {
+    ... simpleCalculatorStyles,
+    width: "99%",
 }
 
 const labelStyles = {
     color: "#555B6F",
     lineHeight: "20px",
-    marginLeft: "10px"
 }
+
+const mobileLabelStyles = {
+    ...labelStyles,
+    marginLeft: "2px",
+} 
 
 const rowStyles = {}
 
-export {inputsStyles, resultsStyles, resultsMiniStyles, simpleCalculatorStyles, labelStyles, rowStyles}
+export {inputsStyles, mobileInputStyles, resultsStyles, resultsMiniStyles, simpleCalculatorStyles, mobileSimpleCalculatorStyles, labelStyles, mobileLabelStyles, rowStyles}

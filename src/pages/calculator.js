@@ -12,10 +12,11 @@ import PSPSlogo from "../assets/PSPSlogo.svg";
 import AdvancedCalculator from '../components/advancedCalculator/advancedCacluator';
 import SimpleCalculator from '../components/simpleCalculator/simpleCalculator';
 
-export default function Calculator() {
+export default function Calculator({isDesktop}) {
 const millimeters = constants.units.millimeters.variable;
 const inches = constants.units.inches.variable;
     // state setup 
+
 
     const [state, setState] = useState({
         inputs: {
@@ -102,6 +103,7 @@ const inches = constants.units.inches.variable;
                     inputs={state.inputs} 
                     results={state.results} 
                     handleUnitToggle={handleUnitToggle}
+                    isDesktop={isDesktop}
                     />            
             )
         } else {
@@ -143,15 +145,9 @@ const inches = constants.units.inches.variable;
     
     return (
     <>
-            {/* <div style={{display: "flex", width:"100%", maxWidth: "95%", margin: "0 auto",justifyContent: "center"}}> */}
-            <div style={{minHeight: "100vh", display: "flex", flexDirection: "column"}}>
+        <div style={{minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
         <main style={{flex: "1"}}>
-            {/* <Container> */}
                 <Row>
-                    {/* <Col style={{minWidth: "0px"}}>
-                    <div></div>
-                    </Col> */}
-
                     <Col style={{justifyContent: "center", width: "400px"}}>
                         <Row>
                             <Container style={{ display: "flex",
@@ -169,40 +165,36 @@ const inches = constants.units.inches.variable;
                             </Container>
                         </Row>
                         <Row style={{flexGrow: "1"}}>
-                            {/* <Col style={{paddingLeft:"0", border: "1px solid magenta"}}> */}
                             <div style={{
                                 width: "401px",
                                 margin: "0 auto",
-                                display: "block",
-                                border: "1px solid magenta"
-                                }}>
+                                display: "block"                                }}>
                                 {handleSimpleAdvancedToggle(state)}
                             </div>
-                            {/* </Col> */}
-                            {/* <InputSection handleInputChange={handleInputChange} inputs={state.inputs} handleUnitToggle={handleUnitToggle}/>
-                            <ResultsMiniSection fStop={state.results.fStop} angleOfView={state.results.angleOfView}/>
-                            <ResultsSection results={state.results} handleUnitToggle={handleUnitToggle}/> */}
                         </Row>
                     </Col>
-                    {/* <Col >
-                    <div></div>
-                    </Col> */}
                 </Row>
-                {/* </Container> */}
                 </main>
                 <footer>
-                    <Container>
+                    <Container fluid>
                         <Row>
                             <Col>
-                                <PSPSlogo style={{display: "flex", justifySelf: "center", marginBottom: "20px"}}/>
-                                <p style = {{
-                                    fontSize: "14px",
-                                    fontWeight: "500",
-                                    lineHeight: "16px",
-                                    justifySelf: "center",
-                                    marginBottom: "40px",
-                                    color: "#2D3242"
-                                }}>Brought to you by <a href='https://psps.club/'>Puget Sound Pinholer’s Society</a></p>
+                                <Row>
+                                    <PSPSlogo style={{display: "block", margin: "0 auto", marginBottom: "20px"}}/>
+                                </Row>
+                                <Row>
+                                    <Container style={{display:"flex", justifyContent: "center", alignContent: "center"}}>
+                                        <div style = {{
+                                            display: "flex",
+                                            justifySelf: "center",
+                                            fontSize: "14px",
+                                            fontWeight: "500",
+                                            lineHeight: "16px",
+                                            marginBottom: "60px",
+                                            color: "#2D3242"
+                                        }}>Brought to you by&nbsp;<a href='https://psps.club/'>Puget Sound Pinholers Society</a></div>
+                                    </Container>
+                                </Row>
                             </Col>
                         </Row>
                     </Container>

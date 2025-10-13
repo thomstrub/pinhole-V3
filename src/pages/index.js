@@ -49,21 +49,23 @@ function handleTabletChange(e) {
     <main style={pageStyles}>
       {isDesktop ? 
       <Container>
-        <Row style={{border:"1px solid magenta"}}>
-            <Col style={{border:"1px solid magenta"}}>
+        <Row>
+            <Col>
             <div></div>
             </Col>
               <Col style={{justifyContent: "center", width: "400px"}}>
-                <Calculator/>
+                <Calculator isDesktop={true}/>
               </Col>
-            <Col style={{border:"1px solid magenta"}}>
+            <Col>
             <div></div>
             </Col>
       </Row>
       </Container>
     
       : 
-      <Calculator/>
+      <Container>
+        <Calculator isDesktop={false}/>
+      </Container>
     }
     </main>
     
