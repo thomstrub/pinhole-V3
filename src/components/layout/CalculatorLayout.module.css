@@ -1,5 +1,8 @@
 .root {
+  /* Use fallback for browsers that don't support dvh */
   height: 100vh;
+  /* Dynamic viewport height - accounts for mobile browser UI */
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   background: #FFFFFF;
