@@ -1,10 +1,7 @@
 import CalculatorLayout from '../components/layout/CalculatorLayout';
 import React, { useState, useEffect } from 'react';
-import { Container, Col, Row } from 'react-bootstrap';
 import constants from '../constants/constants';
 import calculateResults from '../helper/calculate';
-
-import PSPSlogo from "../assets/PSPSlogo.svg";
 import AdvancedCalculator from '../components/advancedCalculator/advancedCacluator';
 import SimpleCalculator from '../components/simpleCalculator/simpleCalculator';
 
@@ -141,20 +138,7 @@ const inches = constants.units.inches.variable;
     
     return (
       <CalculatorLayout>
-        <Row>
-          <Col>
-            <Row>
-              <Container>
-                <h1>Pinhole Calculator</h1>
-              </Container>
-            </Row>
-            <Row style={{ flexGrow: "1" }}>
-              <div>
-                {handleSimpleAdvancedToggle(state)}
-              </div>
-            </Row>
-          </Col>
-        </Row>
+        {handleSimpleAdvancedToggle(state)}
       </CalculatorLayout>
     );
 }   

@@ -1,20 +1,44 @@
 .toggle {
   height: 60px;
   width: 60px;
-  padding: 20px;
+  padding: 0;
   font-size: 16px;
   font-weight: 500;
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
+  font-family: 'Karla', sans-serif;
+  line-height: 20px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.toggle:focus {
+  outline: 2px solid #248CFF;
+  outline-offset: 2px;
 }
 
 .inch {
   border-radius: 6px 0px 0px 6px;
-  line-height: 20px;
 }
 
 .mm {
   border-radius: 0px 6px 6px 0px;
+}
+
+@media (max-width: 768px) {
+  .toggle {
+    flex: 1;
+    min-width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toggle {
+    min-height: 48px;
+    height: 60px;
+  }
 }

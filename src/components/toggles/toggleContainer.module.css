@@ -3,6 +3,8 @@
   height: 60px;
   display: flex;
   flex-direction: row;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
 .notSelected {
@@ -14,4 +16,11 @@
 .selected {
   background: #248CFF;
   color: white;
+}
+
+@media (max-width: 768px) {
+  .toggleContainer {
+    width: 120px;
+    flex-shrink: 0;
+  }
 }

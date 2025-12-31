@@ -1,14 +1,70 @@
-.inputRow {
-  margin-bottom: 4px;
+.inputContainer {
+  margin-bottom: 32px;
 }
 
+.inputRow {
+  margin-bottom: 8px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: 'Karla', sans-serif;
+  color: #555B6F;
+}
 
 .inputRowTop {
-  margin-top: 4px;
+  margin-top: 0;
 }
 
 .inputFlex {
   display: flex;
   width: 100%;
-  justify-content: center;
+  align-items: center;
+  gap: 0;
+  justify-content: flex-start;
+}
+
+.input {
+  flex-shrink: 0;
+  color: #384656;
+  font-family: 'Karla', sans-serif;
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 400;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  padding-left: 16px;
+  height: 60px;
+  width: 240px;
+}
+
+@media (min-width: 769px) {
+  .inputFlex {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .inputContainer {
+    margin-bottom: 24px;
+  }
+  
+  .inputFlex {
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+  
+  .input {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+  }
+  
+  .label {
+    margin-left: 0;
+    margin-bottom: 8px;
+  }
 }

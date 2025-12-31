@@ -1,7 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import ToggleContainer from "../../toggles/toggleContainer";
-import { resultsStyles, labelStyles, rowStyles } from "../../../styles/inputAndResultsStyles";
 import * as styles from './result.module.css';
 import CalculatorPadding from "../../styles/calculatorPadding";
 
@@ -14,11 +13,11 @@ export default function Result({name, result, handleUnitToggle}){
         <Row>
             <Col>
         <Row>
-            <label style={labelStyles} htmlFor={name.variable}>{name.readibleName}</label>
+            <label className={styles.label} htmlFor={name.variable}>{name.readibleName}</label>
         </Row>
         <Row className={styles.rowTop}>
             <div className={styles.flex}>
-                <input style={resultsStyles} id={name.variable} value={resultInUnit ? resultInUnit : ''} readOnly={true}></input>
+                <input className={styles.resultInput} id={name.variable} value={resultInUnit ? resultInUnit : ''} readOnly={true}></input>
                 <CalculatorPadding/>
                 <ToggleContainer unit={result.unit} handleUnitToggle={handleUnitToggle} type={"results"} label={name.variable}/>
             </div> 
