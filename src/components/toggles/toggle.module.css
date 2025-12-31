@@ -1,0 +1,20 @@
+.toggle {
+  height: 60px;
+  width: 60px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.inch {
+  border-radius: 6px 0px 0px 6px;
+  line-height: 20px;
+}
+
+.mm {
+  border-radius: 0px 6px 6px 0px;
+}

@@ -1,0 +1,14 @@
+.inputRow {
+  margin-bottom: 4px;
+}
+
+
+.inputRowTop {
+  margin-top: 4px;
+}
+
+.inputFlex {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}

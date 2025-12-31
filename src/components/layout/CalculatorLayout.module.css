@@ -1,0 +1,51 @@
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main {
+  flex: 1;
+}
+
+.centerCol {
+  justify-content: center;
+  width: 400px;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: center;
+  height: 42px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 100%;
+}
+
+.contentWrapper {
+  width: 401px;
+  margin: 0 auto;
+  display: block;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.footerText {
+  display: flex;
+  justify-self: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  margin-bottom: 60px;
+  color: #2D3242;
+}

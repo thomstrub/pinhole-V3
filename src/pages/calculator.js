@@ -1,12 +1,8 @@
+import CalculatorLayout from '../components/layout/CalculatorLayout';
 import React, { useState, useEffect } from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
-
-import InputSection from "../components/inputSection/inputSection"
-import ResultsSection from "../components/resultsSection/resultsSection"
 import constants from '../constants/constants';
 import calculateResults from '../helper/calculate';
-import ToggleContainer from '../components/toggles/toggleContainer';
-import ResultsMiniSection from '../components/resultMiniSection/resultsMiniSection';
 
 import PSPSlogo from "../assets/PSPSlogo.svg";
 import AdvancedCalculator from '../components/advancedCalculator/advancedCacluator';
@@ -144,62 +140,21 @@ const inches = constants.units.inches.variable;
     },[state.inputs.diameter.inches, state.inputs.diameter.millimeters, state.inputs.filmDimension.inches, state.inputs.filmDimension.millimeters, state.inputs.focalLength.inches, state.inputs.focalLength.millimeters])
     
     return (
-    <>
-        <div style={{minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
-        <main style={{flex: "1"}}>
-                <Row>
-                    <Col style={{justifyContent: "center", width: "400px"}}>
-                        <Row>
-                            <Container style={{ display: "flex",
-                                justifyContent: "center",
-                                height: "42px",
-                                marginBottom: "24px",
-                                marginTop: "24px"
-                                }}>
-
-                            <h1 style={{
-                                fontWeight: "800",
-                                fontSize: "36px",
-                                lineHeight: "100%",
-                                }}>Pinhole Calculator</h1>
-                            </Container>
-                        </Row>
-                        <Row style={{flexGrow: "1"}}>
-                            <div style={{
-                                width: "401px",
-                                margin: "0 auto",
-                                display: "block"                                }}>
-                                {handleSimpleAdvancedToggle(state)}
-                            </div>
-                        </Row>
-                    </Col>
-                </Row>
-                </main>
-                <footer>
-                    <Container fluid>
-                        <Row>
-                            <Col>
-                                <Row>
-                                    <PSPSlogo style={{display: "block", margin: "0 auto", marginBottom: "20px"}}/>
-                                </Row>
-                                <Row>
-                                    <Container style={{display:"flex", justifyContent: "center", alignContent: "center"}}>
-                                        <div style = {{
-                                            display: "flex",
-                                            justifySelf: "center",
-                                            fontSize: "14px",
-                                            fontWeight: "500",
-                                            lineHeight: "16px",
-                                            marginBottom: "60px",
-                                            color: "#2D3242"
-                                        }}>Brought to you by&nbsp;<a href='https://psps.club/'>Puget Sound Pinholers Society</a></div>
-                                    </Container>
-                                </Row>
-                            </Col>
-                        </Row>
-                    </Container>
-                </footer>
-            </div>
-    </>
-    )
+      <CalculatorLayout>
+        <Row>
+          <Col>
+            <Row>
+              <Container>
+                <h1>Pinhole Calculator</h1>
+              </Container>
+            </Row>
+            <Row style={{ flexGrow: "1" }}>
+              <div>
+                {handleSimpleAdvancedToggle(state)}
+              </div>
+            </Row>
+          </Col>
+        </Row>
+      </CalculatorLayout>
+    );
 }   

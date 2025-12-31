@@ -1,8 +1,8 @@
 import React from "react";
+import * as styles from './calculatorPadding.module.css';
 
 export default function CalculatorPadding(){
-
     return(
-        <div style={{minWidth: "20px", maxWidth:"20px"}}></div>
+        <div className={styles.padding}></div>
     )
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { resultsMiniStyles, simpleCalculatorStyles, mobileSimpleCalculatorStyles, labelStyles, rowStyles, mobileLabelStyles } from "../../../styles/inputAndResultsStyles";
+import * as styles from './resultsMini.module.css';
 
 export default function ResultsMini({name, result, isSimpleCalculator, isDesktop}){
 
@@ -17,9 +18,9 @@ export default function ResultsMini({name, result, isSimpleCalculator, isDesktop
             <Row>
                 <label style={isDesktop ? labelStyles : mobileLabelStyles} htmlFor={name.variable}>{name.readibleName}</label>
             </Row>
-            <Row style={{marginTop: "4px"}}>
+            <Row className={styles.rowTop}>
                 <Col>
-                    <input style={resultsMiniStyles(isDesktop, isSimpleCalculator)} id={name.variableName} value={result ? result : ''} readOnly={true}></input>
+                    <input style={resultsMiniStyles(isDesktop, isSimpleCalculator)} id={name.variable} value={result ? result : ''} readOnly={true}></input>
                 </Col>
             </Row>
         </>

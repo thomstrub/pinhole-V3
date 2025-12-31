@@ -2,14 +2,10 @@ import React from "react";
 import InchToggle from "./inchToggle";
 import MillimeterToggle from "./millimeterToggle";
 import constants from "../../constants/constants";
+import * as styles from './toggleContainer.module.css';
 export default function ToggleContainer({unit, handleUnitToggle, type, label}){
     
-    const toggleContainerStyles = {
-     width: "120px",
-     height: "60px",
-     display: "flex",
-     flexDirection: "row"
-    }
+    // Layout styles moved to CSS module
     const notSelectedColorStyles = {
         border: "1px solid #cccccc",
         background: "#F2F3F5",
@@ -28,12 +24,9 @@ export default function ToggleContainer({unit, handleUnitToggle, type, label}){
         }
     }
     return(
-        <>
-            <div onClick={() => handleUnitToggle(type, label)} style={toggleContainerStyles}>
-                <InchToggle colorStyles={assignColorStyles(unit, constants.units.inches.variable)}/>
-                <MillimeterToggle colorStyles={assignColorStyles(unit, constants.units.millimeters.variable)}/>       
-            </div>
-        </>
-        
+        <div onClick={() => handleUnitToggle(type, label)} className={styles.toggleContainer}>
+            <InchToggle colorStyles={assignColorStyles(unit, constants.units.inches.variable)}/>
+            <MillimeterToggle colorStyles={assignColorStyles(unit, constants.units.millimeters.variable)}/>       
+        </div>
     )
 }

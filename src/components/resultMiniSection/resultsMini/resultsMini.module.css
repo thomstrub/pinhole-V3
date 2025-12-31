@@ -1,0 +1,24 @@
+.row {
+  /* No extra row styles yet */
+}
+
+.label {
+  /* Desktop/mobile handled by conditional className */
+}
+
+.rowTop {
+  margin-top: 4px;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+}
+
+.rowTop {
+  margin-top: 4px;
+}
+.flex {
+  display: flex;
+  width: 100%;
+}

@@ -9,6 +9,7 @@ module.exports = {
     author: `Thom Strub`,
   },
   plugins: [
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-omni-font-loader`,
       options: {

@@ -1,26 +1,9 @@
 import React from "react";
+import * as styles from './toggle.module.css';
 export default function InchToggle({colorStyles}){
-    
-    const inchToggleStyles = {
-        ...colorStyles,
-        borderRadius: "6px 0px 0px 6px",
-        height: "60px",
-        width: "60px",
-        padding: "20px",
-        fontSize: "16px",
-        fontWeight: "500",
-        lineHeight: "20px",
-        display: "flex",
-        alignItems: "center",
-        textAlign: "center",
-        justifyContent: "center"
-    }
     return(
-        <>
-            <div style={inchToggleStyles}>
-                in
-            </div>
-        </>
-        
+        <div style={colorStyles} className={`${styles.toggle} ${styles.inch}`}>
+            in
+        </div>
     )
 }

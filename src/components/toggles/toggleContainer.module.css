@@ -1,0 +1,17 @@
+.toggleContainer {
+  width: 120px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+}
+
+.notSelected {
+  border: 1px solid #cccccc;
+  background: #F2F3F5;
+  color: #BCBCBC;
+}
+
+.selected {
+  background: #248CFF;
+  color: white;
+}
