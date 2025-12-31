@@ -1,3 +1,14 @@
 html, body { /* this allows the children to inherit this style */
     font-family: "Karla";
- }
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure Gatsby wrapper divs inherit height properly */
+#___gatsby,
+#gatsby-focus-wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}

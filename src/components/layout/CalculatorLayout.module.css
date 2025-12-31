@@ -1,16 +1,19 @@
 .root {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   background: #FFFFFF;
+  overflow: hidden;
 }
 
 .main {
-  flex: 1 0 auto;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 20px;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .headerContainer {
@@ -34,6 +37,7 @@
   width: 100%;
   max-width: 600px;
   padding: 0 20px;
+  padding-bottom: 32px;
   box-sizing: border-box;
 }
 
@@ -41,6 +45,7 @@
   .contentWrapper {
     max-width: 100%;
     padding: 0 20px;
+    padding-bottom: 16px;
   }
   
   .title {
@@ -49,14 +54,15 @@
   }
   
   .headerContainer {
-    margin-top: 32px;
-    margin-bottom: 24px;
+    margin-top: 16px;
+    margin-bottom: 12px;
   }
 }
 
 @media (max-width: 480px) {
   .contentWrapper {
     padding: 0 16px;
+    padding-bottom: 12px;
   }
   
   .title {
@@ -65,15 +71,29 @@
   }
   
   .headerContainer {
-    margin-top: 24px;
-    margin-bottom: 20px;
+    margin-top: 12px;
+    margin-bottom: 8px;
   }
 }
 
 .footer {
   flex-shrink: 0;
-  margin-top: auto;
   padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+/* Remove Bootstrap Container padding from footer */
+.footer :global(.container-fluid) {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Remove Bootstrap Row margins from footer */
+.footer :global(.row) {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .logo {
@@ -91,19 +111,23 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 16px;
-  margin-bottom: 60px;
+  margin-bottom: 0;
   color: #2D3242;
   text-align: center;
 }
 
 @media (max-width: 768px) {
+  .footer {
+    padding-top: 16px;
+    padding-bottom: 8px;
+  }
+  
   .footerText {
-    margin-bottom: 40px;
     font-size: 13px;
   }
   
   .logo {
     width: 60px;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
   }
 }
