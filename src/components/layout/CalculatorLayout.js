@@ -14,7 +14,7 @@ export default function CalculatorLayout({ children }) {
           {children}
         </div>
       </main>
-      <footer>
+      <footer className={styles.footer}>
         <Container fluid>
           <Row>
             <Col>

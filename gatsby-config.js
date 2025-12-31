@@ -42,6 +42,18 @@ module.exports = {
           include: /assets/ // Adjust this regex to match your SVG folder
         }
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Pinhole Calculator`,
+        short_name: `Pinhole Calc`,
+        start_url: `/`,
+        background_color: `#FFFFFF`,
+        theme_color: `#555B6F`,
+        display: `standalone`,
+        icon: `src/assets/PSPSlogo.svg`,
+      },
+    },
   ],
 }
