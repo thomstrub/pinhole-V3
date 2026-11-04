@@ -8,9 +8,13 @@ let constants = {
             variable: 'diameter',
             readibleName: "Pinhole Diameter"
         },
-        filmDimension: {
-            variable: 'filmDimension',
-            readibleName: 'Film Dimension'
+        filmWidth: {
+            variable: 'filmWidth',
+            readibleName: "Film Dimension"
+        },
+        filmHeight: {
+            variable: 'filmHeight',
+            readibleName: ""
         }
     },
     results: {
@@ -18,23 +22,32 @@ let constants = {
             variable: "fStop",
             readibleName: "F-Stop"
         },
+        lensEquivalent35mm: {
+            variable: "lensEquivalent35mm",
+            readibleName: "35mm Lens Equivalent"
+        },
         angleOfView: {
             variable: "angleOfView",
             readibleName: "Angle of View"
         },
+        idealPinholeDiameter: {
+            variable: "idealPinholeDiameter",
+            readibleName: "Ideal Pinhole Diameter"
+        },
         imageDiameter: {
             variable: "imageDiameter",
             readibleName: "Image Diameter"
-        },
-        optimalPinholeDiameter: {
-            variable: "optimalPinholeDiameter",
-            readibleName: "Optimal Pinhole Diameter"
-        },
-        optimalFocalLength: {
-            variable: "optimalFocalLength",
-            readibleName: "Optimal Focal Length"
         }
     },
+    tabs: {
+        basic: "basic",
+        advanced: "advanced"
+    },
+    // inputs that share one unit toggle, keyed by the toggle's label
+    linkedInputs: {
+        filmDimension: ["filmWidth", "filmHeight"]
+    },
+    fullFrameDiagonalMm: 43.27,
     units: {
         millimeters: {
             variable: "millimeters",

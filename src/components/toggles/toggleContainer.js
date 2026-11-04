@@ -11,12 +11,12 @@ export default function ToggleContainer({unit, handleUnitToggle, type, label}){
      flexDirection: "row"
     }
     const notSelectedColorStyles = {
-        border: "1px solid #cccccc",
-        background: "#F2F3F5",
-        color: "#BCBCBC"
+        border: "1px solid #DBE1E5",
+        background: "#EAECEF",
+        color: "#555B6F"
     }
     const selectedColorStyles = {
-        background: "#248CFF",
+        background: "#248BFD",
         color: "white"
     }
 

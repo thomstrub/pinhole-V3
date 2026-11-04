@@ -1,68 +1,46 @@
-const basicBoxStyles = {
-    color: "#3E3D3D",
+const labelStyles = {
+    display: "flex",
+    alignItems: "center",
+    gap: "6px",
+    height: "20px",
+    marginBottom: "8px",
+    color: "#384656",
+    fontSize: "16px",
+    fontWeight: "500",
+    lineHeight: "20px"
+}
+
+const inputStyles = {
+    display: "block",
+    width: "100%",
+    height: "60px",
+    boxSizing: "border-box",
+    padding: "0 12px",
+    color: "#384656",
     fontFamily: "Karla",
     fontSize: "32px",
     lineHeight: "32px",
-    fontWeight: "400px",
-    border: "1px solid #cccccc",
-    borderRadius: "6px",
-    boxSizing: "border-box",
-    marginBottom:"32px",
-    paddingLeft:"16px",
-    color: "#384656"
-}
-
-const inputsStyles = {
-    ...basicBoxStyles,
-    height: "60px",
-    width: "240px",
-}
-
-const mobileInputStyles = {
-    ...basicBoxStyles,
-    height: "60px",
-    width: "58%",
-}
-
-const resultsStyles = {
-    ...inputsStyles,
-    background: "#ECECEC"
-}
-
-const resultsMiniStyles = {
-    ...basicBoxStyles,
-    background: "#ECECEC",
-    height: "60px",
-    width: "160px"     
-}
-
-const simpleCalculatorStyles = {
-    ...basicBoxStyles,
-    background: "#EAECEF",
-    height: "60px",
-    width: "390px",
+    background: "#FFFFFF",
     border: "1px solid #DBE1E5",
-    display: "block", 
-    margin: "0 auto",
-    justifyContent: "center" 
-
+    borderRadius: "6px"
 }
 
-const mobileSimpleCalculatorStyles = {
-    ... simpleCalculatorStyles,
-    width: "99%",
+const resultStyles = {
+    ...inputStyles,
+    background: "#EAECEF"
 }
 
-const labelStyles = {
-    color: "#555B6F",
-    lineHeight: "20px",
+// label, field and optional unit toggle; the toggle sits level with the field
+const rowStyles = {
+    display: "flex",
+    alignItems: "flex-end",
+    gap: "20px",
+    marginBottom: "24px"
 }
 
-const mobileLabelStyles = {
-    ...labelStyles,
-    marginLeft: "2px",
-} 
+const fieldStyles = {
+    flex: "1 1 0",
+    minWidth: 0
+}
 
-const rowStyles = {}
-
-export {inputsStyles, mobileInputStyles, resultsStyles, resultsMiniStyles, simpleCalculatorStyles, mobileSimpleCalculatorStyles, labelStyles, mobileLabelStyles, rowStyles}
+export { labelStyles, inputStyles, resultStyles, rowStyles, fieldStyles }
