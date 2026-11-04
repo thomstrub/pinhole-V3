@@ -30,9 +30,9 @@ let constants = {
             variable: "angleOfView",
             readibleName: "Angle of View"
         },
-        idealPinholeDiameter: {
-            variable: "idealPinholeDiameter",
-            readibleName: "Ideal Pinhole Diameter"
+        optimalPinholeDiameter: {
+            variable: "optimalPinholeDiameter",
+            readibleName: "Optimal Pinhole Diameter"
         },
         imageDiameter: {
             variable: "imageDiameter",

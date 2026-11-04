@@ -26,7 +26,7 @@ export default function CalculatorPage() {
             filmHeight: emptyInput(inches.variable)
         },
         results: {
-            idealPinholeDiameter: { unit: millimeters.variable },
+            optimalPinholeDiameter: { unit: millimeters.variable },
             imageDiameter: { unit: inches.variable }
         },
         tab: constants.tabs.basic

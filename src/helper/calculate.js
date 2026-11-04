@@ -12,10 +12,10 @@ function formatFStop(fStop){
     return "F-" + Number(fStop.toFixed(1));
 }
 
-function inBothUnits(valueInMm, unit){
+function inBothUnits(valueInMm, unit, decimals = 2){
     return {
-        [millimeters]: valueInMm ? valueInMm.toFixed(2) : '',
-        [inches]: valueInMm ? (valueInMm * constants.units.inches.multiplierFromMillimeters).toFixed(2) : '',
+        [millimeters]: valueInMm ? valueInMm.toFixed(decimals) : '',
+        [inches]: valueInMm ? (valueInMm * constants.units.inches.multiplierFromMillimeters).toFixed(decimals) : '',
         unit
     }
 }
@@ -40,9 +40,9 @@ export default function calculateResults(state){
         ? 2 * Math.atan(filmDiagonal / (2 * focalLength)) * 180 / Math.PI
         : 0;
 
-    // to do: confirm formula (constant is for inches)
+    // constant is for inches
     const focalLengthInches = focalLength * constants.units.inches.multiplierFromMillimeters;
-    const idealPinholeDiameter = Math.sqrt(focalLengthInches * .00007) * constants.units.millimeters.multiplierFromInches;
+    const optimalPinholeDiameter = Math.sqrt(focalLengthInches * .00007) * constants.units.millimeters.multiplierFromInches;
 
     // to do: confirm formula
     const imageDiameter = focalLength * 1.92;
@@ -51,7 +51,7 @@ export default function calculateResults(state){
         [constants.results.fstop.variable]: fStop ? formatFStop(fStop) : '',
         [constants.results.lensEquivalent35mm.variable]: lensEquivalent35mm ? lensEquivalent35mm.toFixed(0) + "mm" : '',
         [constants.results.angleOfView.variable]: angleOfView ? Number(angleOfView.toFixed(2)) + "°" : '',
-        [constants.results.idealPinholeDiameter.variable]: inBothUnits(idealPinholeDiameter, state.results.idealPinholeDiameter.unit),
+        [constants.results.optimalPinholeDiameter.variable]: inBothUnits(optimalPinholeDiameter, state.results.optimalPinholeDiameter.unit, 3),
         [constants.results.imageDiameter.variable]: inBothUnits(imageDiameter, state.results.imageDiameter.unit)
     }
 }
