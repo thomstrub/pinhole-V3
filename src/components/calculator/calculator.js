@@ -8,12 +8,12 @@ export default function Calculator({isAdvanced, inputs, results, handleInputChan
     return(
         <div>
             <Input name={constants.inputs.focalLength} handleInputChange={handleInputChange} value={inputs.focalLength} handleUnitToggle={handleUnitToggle}/>
-            <Input name={constants.inputs.diameter} handleInputChange={handleInputChange} value={inputs.diameter} handleUnitToggle={handleUnitToggle}/>
+            {isAdvanced && <Output name={constants.results.imageDiameter} result={results[constants.results.imageDiameter.variable]} handleUnitToggle={handleUnitToggle}/>}
             {isAdvanced && <Output name={constants.results.optimalPinholeDiameter} result={results[constants.results.optimalPinholeDiameter.variable]} handleUnitToggle={handleUnitToggle}/>}
+            <Input name={constants.inputs.diameter} handleInputChange={handleInputChange} value={inputs.diameter} handleUnitToggle={handleUnitToggle}/>
             <Output name={constants.results.fstop} result={results[constants.results.fstop.variable]}/>
             {isAdvanced && (
                 <>
-                    <Output name={constants.results.imageDiameter} result={results[constants.results.imageDiameter.variable]} handleUnitToggle={handleUnitToggle}/>
                     <FilmDimensionInput handleInputChange={handleInputChange} width={inputs.filmWidth} height={inputs.filmHeight} handleUnitToggle={handleUnitToggle}/>
                     <Output name={constants.results.lensEquivalent35mm} result={results[constants.results.lensEquivalent35mm.variable]}/>
                     <Output name={constants.results.angleOfView} result={results[constants.results.angleOfView.variable]}/>

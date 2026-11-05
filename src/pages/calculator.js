@@ -4,6 +4,7 @@ import constants from '../constants/constants';
 import calculateResults from '../helper/calculate';
 import Tabs from '../components/tabs/tabs';
 import Calculator from '../components/calculator/calculator';
+import * as styles from './calculator.module.css';
 
 const { millimeters, inches } = constants.units;
 
@@ -32,7 +33,7 @@ export default function CalculatorPage() {
         tab: constants.tabs.basic
     });
 
-    const results = useMemo(() => calculateResults(state), [state.inputs, state.results]);
+    const results = useMemo(() => calculateResults(state), [state]);
 
     function handleInputChange(e){
         const id = e.target.id;
@@ -84,8 +85,8 @@ export default function CalculatorPage() {
                     handleInputChange={handleInputChange}
                     handleUnitToggle={handleUnitToggle}
                 />
-                <footer style={{ textAlign: "center", fontSize: "16px", lineHeight: "20px", color: "#555B6F", padding: "0 0 40px", textWrap: "balance" }}>
-                    Brought to you by <a href="https://psps.club/" style={{ color: "#248BFD", textDecoration: "none" }}>Puget Sound Pinholer’s Society</a>
+                <footer style={{ textAlign: "center", fontSize: "clamp(11px, 3.4vw, 16px)", lineHeight: "20px", color: "#555B6F", padding: "0 0 40px", whiteSpace: "nowrap" }}>
+                    Brought to you by <a href="https://psps.club/" className={styles.footerLink} style={{ color: "#248BFD", textDecoration: "none" }}>Puget Sound Pinholer’s Society</a>
                 </footer>
             </main>
         </div>
